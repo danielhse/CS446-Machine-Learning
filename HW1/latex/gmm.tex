@@ -1,0 +1,43 @@
+\begin{Q}
+\textbf{\Large Gaussian Mixture Models}\\
+
+Consider a Gaussian mixture model with $K$ components ($k\in\{1, \ldots, K\}$), each having mean $\mu_k$, variance $\sigma_k^2$, and mixture weight $\pi_k$. Further, we are given a dataset $\mathcal{D} = \{x_i\}$, where $x_i \in \mathbb{R}$. We use $z_{i} = \{z_{ik}\}$ to denote the latent variables.
+
+
+\begin{enumerate}
+
+\item What is the log-likelihood of the data according to the Gaussian Mixture Model (use $\mu_k$, $\sigma_k$, $\pi_k$, $K$, $x_i$, and $\mathcal{D}$)?
+
+\item Assume $K=1$,  find the maximum likelihood estimate for the parameters ($\mu_{1}$, $\sigma_{1}^{2}$, $\pi_{1}$).
+
+\item What is the probability distribution on the latent variables, i.e., what is the distribution
+$p(z_{i,1}, z_{i,2}, \cdots, z_{i,K} )$ underlying Gaussian mixture models. Also give its name.
+
+
+\item For general $K$, what is the posterior probability $p(z_{ik} = 1|x_i)$? To simplify, wherever possible, use $\mathcal{N}(x_{i}|\mu_{k},\sigma_{k})$, a Gaussian distribution over $x_{i} \in \mathbb{R}$ having mean $\mu_{k}$ and variance $\sigma_{k}^2$.
+
+
+\item  How are k-Means and Gaussian Mixture Model related? (There are three conditions)
+
+\textbf{Hint:} Think of variance, $\pi_k$, and hard/soft assignment.
+
+\item  Show that:
+$$
+\lim_{\epsilon \rightarrow 0} -\epsilon \log \sum_{k=1}^{K} \exp{(-F_{k}/\epsilon) } = \min_{k} F_{k}, \quad \epsilon \in \mathbb{R}^{+}
+$$
+\textbf{Hint:} Use l'Hopital's rule.
+
+\item Consider the modified Gaussian Mixture Model objective:
+$$
+\min_{\mu} - \sum_{x_{i} \in \mathcal{D}} \epsilon \log \sum_{k=1}^{K} \exp{(-(x_{i} - \mu_{k} )^{2}/\epsilon) }.
+$$
+Conclude that the objective for k-Means is the 0-temperature limit of Gaussian Mixture Model.
+
+\textbf{Hint:} Let $F_{k}= (x-\mu_{k})^{2}$ and apply the equation you proved in (f).
+
+
+
+\end{enumerate}
+
+\end{Q}
+          

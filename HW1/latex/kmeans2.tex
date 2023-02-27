@@ -1,0 +1,38 @@
+\begin{Q}
+\textbf{\Large K-Means 2}\\
+
+We are given a dataset $\cD = \{(x)\}$ of 2d points $x\in\mathbb{R}^2$ which we are interested in partitioning into $K$ clusters, each having a cluster center $\mu_k$ ($k\in\{1, \ldots, K\}$) via the $k$-Means algorithm. This algorithm optimizes the following cost function:
+\begin{equation}
+	\min_{\mu_k, r} \sum_{x\in\cD,k\in\{1, \ldots, K\}} \frac{1}{2}r_{x,k}\|x - \mu_k\|_2^2 \quad\quad\text{s.t.}\quad \left\{\begin{array}{ll}
+r_{x,k}\in\{0,1\}&\forall x\in\cD,k\in\{1, \ldots, K\}\\
+\sum_{k\in\{1, \ldots, K\}} r_{x,k} = 1 & \forall x\in\cD
+\end{array}\right.
+\label{eq:KMeans2:main}
+\end{equation}
+
+\begin{enumerate}
+
+\item What is the domain for $\mu_k$?
+
+\item Given fixed cluster centers $\mu_k$ $\forall k\in\{1, \ldots, K\}$, what is the optimal $r_{x,k}$ for the program in Eq. \ref{eq:KMeans2:main}? Provide a reason?
+
+\item Given fixed $r_{x,k}$ $\forall x\in\cD,k\in\{1, \ldots, K\}$, what are the optimal cluster centers $\mu_k$ $\forall k\in\{1, \ldots, K\}$ for the program in Eq. \ref{eq:KMeans2:main}? 
+
+\textbf{Hint:} Reason by first computing the derivative w.r.t $\mu_k$.
+
+\item Using Pseudo-code, sketch the algorithm which alternates the aforementioned two steps. Is this algorithm guaranteed to converge and why? Is this algorithm guaranteed to find the global optimum? What is the reason?
+
+\textbf{Hint:} you can provide a counter-example to invalidate a statement.
+
+\item Please implement the aforementioned two steps. For the given dataset, after how many updates does the algorithm converge, what cost function value does it converge to and what are the obtained cluster centers? Visualize clusters at each step and attach the plots here. Please at least report numbers with one decimal point.
+
+\textbf{Remark:} how we count updates: when computing a set of new centroids from initialization, we call this one update.
+
+\textbf{Hint:} You may find \texttt{hw1\_utils.vis\_cluster} useful.
+
+
+\end{enumerate}
+
+
+\end{Q}
+          
